@@ -1,0 +1,13 @@
+{
+  "es" : {
+    "TITLE": "Título",
+    "DESCRIPTION": "Descripción",
+    "URL":  ""
+  },
+
+  "en" : {
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "URL":  ""
+  }
+}
