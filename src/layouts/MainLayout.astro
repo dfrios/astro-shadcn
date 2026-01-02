@@ -2,13 +2,13 @@
 import { Font } from "astro:assets";
 
 import "@/styles/global.css";
-import config from "@/data/config.json";
+import config from "@data/config.json";
 
-import MetaPixelHead from "@/components/base/MetaPixelHead.astro";
-import MetaPixelBody from "@/components/base/MetaPixelBody.astro";
-import GoogleTagManagerHead from "@/components/base/GoogleTagManagerHead.astro";
-import GoogleTagManagerBody from "@/components/base/GoogleTagManagerBody.astro";
-import OpenGraph from "@/components/base/OpenGraph.astro";
+import MetaPixelHead from "@components/base/MetaPixelHead.astro";
+import MetaPixelBody from "@components/base/MetaPixelBody.astro";
+import GoogleTagManagerHead from "@components/base/GoogleTagManagerHead.astro";
+import GoogleTagManagerBody from "@components/base/GoogleTagManagerBody.astro";
+import OpenGraph from "@components/base/OpenGraph.astro";
 
 import type { lang } from "@interfaces/lang";
 interface Props {
