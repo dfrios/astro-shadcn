@@ -4,10 +4,13 @@ import MainLayout from "@layouts/MainLayout.astro";
 import Header from "@components/sections/Header.astro";
 import Footer from "@components/sections/Footer.astro";
 
-const lang = "es";
+const lang = "en";
 ---
 
 <MainLayout lang={lang}>
   <Header lang={lang} />
+  <p class="font-roboto font-light">Roboto Light</p>
+  <p class="font-roboto">Roboto Regular</p>
+  <p class="font-roboto font-bold">Roboto Bold</p>
   <Footer lang={lang} />
 </MainLayout>
