@@ -72,6 +72,9 @@ importers:
       tailwind-clamp:
         specifier: ^4.1.2
         version: 4.1.2(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
+      tailwindcss-content-visibility:
+        specifier: ^1.0.2
+        version: 1.0.2(tailwindcss@4.1.18)
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
@@ -2015,6 +2018,11 @@ packages:
 
   tailwind-merge@3.4.0:
     resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
+
+  tailwindcss-content-visibility@1.0.2:
+    resolution: {integrity: sha512-Sch6hzEstDxFIDdMrI7tdUhYCUiFLS9FjJM5RfMFbRt5y0q24UwaXRGNvepoAzoHj60IqAwoysN+274XFzT01A==}
+    peerDependencies:
+      tailwindcss: ^3.0.0
 
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
@@ -4614,6 +4622,10 @@ snapshots:
       - '@csstools/css-tokenizer'
 
   tailwind-merge@3.4.0: {}
+
+  tailwindcss-content-visibility@1.0.2(tailwindcss@4.1.18):
+    dependencies:
+      tailwindcss: 4.1.18
 
   tailwindcss@4.1.18: {}
 

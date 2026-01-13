@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 @plugin "tailwind-clamp";
+@plugin "tailwindcss-content-visibility";
 
 @custom-variant dark (&:is(.dark *));
 
