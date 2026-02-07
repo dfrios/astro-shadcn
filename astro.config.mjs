@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 // import relativeLinks from "astro-relative-links";
@@ -39,28 +39,32 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "roboto",
         cssVariable: "--font-roboto",
-        variants: [
-          {
-            weight: "100 200 300 400 500 700 800 900",
-            style: "normal",
-            src: ["./src/assets/fonts/roboto-variable.ttf"],
-          },
-        ],
+        options: {
+          variants: [
+            {
+              weight: "100 200 300 400 500 700 800 900",
+              style: "normal",
+              src: ["./src/assets/fonts/roboto-variable.ttf"],
+            },
+          ],
+        },
       },
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "roboto-italic",
         cssVariable: "--font-roboto-italic",
-        variants: [
-          {
-            weight: "100 200 300 400 500 700 800 900",
-            style: "normal",
-            src: ["./src/assets/fonts/roboto-variable-italic.ttf"],
-          },
-        ],
+        options: {
+          variants: [
+            {
+              weight: "100 200 300 400 500 700 800 900",
+              style: "normal",
+              src: ["./src/assets/fonts/roboto-variable-italic.ttf"],
+            },
+          ],
+        },
       },
     ],
   },
