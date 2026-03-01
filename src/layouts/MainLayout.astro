@@ -15,9 +15,10 @@ interface Props {
   lang: lang;
   title: string;
   description: string;
+  opengraphImage: string;
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, opengraphImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -39,7 +40,7 @@ const { lang, title, description } = Astro.props;
 
     <GoogleTagManagerHead />
     <MetaPixelHead />
-    <OpenGraph lang={lang} />
+    <OpenGraph lang={lang} title={title} description={description} opengraphImage={opengraphImage} />
 
     <Font cssVariable="--font-roboto" preload />
     <Font cssVariable="--font-roboto-italic" preload />
