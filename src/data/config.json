@@ -1,13 +1,9 @@
 {
   "es" : {
-    "TITLE": "Título",
-    "DESCRIPTION": "Descripción",
     "BASE_URL":  ""
   },
 
   "en" : {
-    "TITLE": "Title",
-    "DESCRIPTION": "Description",
     "BASE_URL":  ""
   }
 }
