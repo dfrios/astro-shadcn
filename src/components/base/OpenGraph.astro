@@ -15,8 +15,8 @@ const constants = config[lang];
 <meta property="og:site_name" content={constants.TITLE} />
 <meta property="og:description" content={constants.DESCRIPTION} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={constants.URL} />
-<meta property="og:image" content={`${constants.URL}/opengraph.jpg`} />
+<meta property="og:url" content={constants.BASE_URL} />
+<meta property="og:image" content={`${constants.BASE_URL}/opengraph.jpg`} />
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -26,4 +26,4 @@ const constants = config[lang];
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content={constants.TITLE} />
 <meta name="twitter:description" content={constants.DESCRIPTION} />
-<meta name="twitter:image" content={`${constants.URL}/opengraph.jpg`} />
+<meta name="twitter:image" content={`${constants.BASE_URL}/opengraph.jpg`} />

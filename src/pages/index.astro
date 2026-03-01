@@ -1,5 +1,5 @@
 ---
-import Config from "@data/config.json";
+import indexLabels from "@lang/index.json";
 ---
 
 <!doctype html>
@@ -8,7 +8,7 @@ import Config from "@data/config.json";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="refresh" content="5;url=/es/" />
-    <title>{Config.es.TITLE}</title>
+    <title>{indexLabels.PAGE_TITLE['es']}</title>
     <script>
       const locale = new Intl.Locale(navigator.language);
 
