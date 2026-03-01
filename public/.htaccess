@@ -1,3 +1,7 @@
+<FilesMatch "\.(php|phtml|php[0-9])$">
+  Require all denied
+</FilesMatch>
+
 RewriteEngine on
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
