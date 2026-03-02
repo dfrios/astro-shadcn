@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @plugin "tailwind-clamp";
 
@@ -37,7 +38,7 @@
   --text-lg--line-height: 1.75rem;
   --text-xl:1.75rem;
   --text-xl--line-height: 2rem;
-  
+
   --drop-shadow-my-shadow: 0 0 6px oklch(50% 0 0);
 
   --animate-wobble: wobble 3s both infinite;
@@ -159,6 +160,12 @@
 }
 
 @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer components {
