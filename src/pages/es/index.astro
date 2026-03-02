@@ -14,7 +14,12 @@ const lang = "es";
   title={indexLabels.PAGE_TITLE[lang]}
   description={indexLabels.PAGE_DESCRIPTION[lang]}
   opengraphImage="home.jpg"
+  keywords=""
 >
+
+  <script type="application/ld+json" is:inline slot="head">
+  </script>
+  
   <Header lang={lang} />
   <p class="font-roboto font-light">Roboto Light</p>
   <p class="font-roboto">Roboto Regular</p>
