@@ -1,9 +1,8 @@
 {
-  "es" : {
-    "BASE_URL":  ""
-  },
+  "BASE_URL": "https://living35hotel.com",
 
-  "en" : {
-    "BASE_URL":  ""
+  "COPYRIGHT": {
+    "es": "",
+    "en": ""
   }
 }

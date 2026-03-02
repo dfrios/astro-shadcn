@@ -10,16 +10,14 @@ interface Props {
 }
 
 const { lang, title, description, opengraphImage } = Astro.props;
-
-const constants = config[lang];
 ---
 
 <meta property="og:title" content={title} />
 <meta property="og:site_name" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
-<meta property="og:url" content={constants.BASE_URL} />
-<meta property="og:image" content={`${constants.BASE_URL}/og/${opengraphImage}`} />
+<meta property="og:url" content={config.BASE_URL} />
+<meta property="og:image" content={`${config.BASE_URL}/og/${opengraphImage}`} />
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -29,4 +27,4 @@ const constants = config[lang];
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`${constants.BASE_URL}/og/${opengraphImage}`} />
+<meta name="twitter:image" content={`${config.BASE_URL}/og/${opengraphImage}`} />
