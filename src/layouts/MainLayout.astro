@@ -1,5 +1,5 @@
 ---
-import type { lang } from "@interfaces/lang";
+import type { Lang } from "@interfaces/lang";
 
 import { Font } from "astro:assets";
 
@@ -14,7 +14,7 @@ import GoogleTagManagerBody from "@components/base/GoogleTagManagerBody.astro";
 import OpenGraph from "@components/base/OpenGraph.astro";
 
 interface Props {
-  lang: lang;
+  lang: Lang;
   title: string;
   description: string;
   opengraphImage: string;
