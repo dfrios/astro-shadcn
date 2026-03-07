@@ -1,5 +1,5 @@
 ---
-import type { Lang } from "@interfaces/lang";
+import type { Langs } from "@interfaces/lang";
 
 import { Font } from "astro:assets";
 
@@ -14,7 +14,7 @@ import GoogleTagManagerBody from "@components/base/GoogleTagManagerBody.astro";
 import OpenGraph from "@components/base/OpenGraph.astro";
 
 interface Props {
-  lang: Lang;
+  lang: Langs;
   title: string;
   description: string;
   opengraphImage: string;
@@ -32,7 +32,7 @@ currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset(
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href={`${Astro.site}/favicon.png`} />
+    <link rel="icon" type="image/png" href={`${Astro.site?.href}/favicon.png`} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords}>
     <meta name="generator" content={Astro.generator} />

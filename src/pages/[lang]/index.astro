@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import type { Lang, Langs, LangParams } from "@interfaces/lang";
+
+import langsJson from "@data/langs.json";
+
+
+export const getStaticPaths = (() => {
+  const langs : Array<Lang> = langsJson as Array<Lang>;
+  
+  const params : Array<LangParams> = [];
+  langs.map(lang => {
+    params.push({
+      params: {
+        lang: lang.shortname
+      }
+    });
+  })
+
+  return params;
+}) satisfies GetStaticPaths;
+
+const { lang } = Astro.params;
+const internalLang : Langs = lang as Langs;
+---
+
+<h1>index {internalLang}</h1>
