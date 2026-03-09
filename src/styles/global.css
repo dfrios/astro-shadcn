@@ -176,7 +176,7 @@
       max-w-[85%]
       mx-auto
       desktop-1:w-[80%]
-      desktop-1:max-w-[1366px]
+      desktop-1:max-w-341.5
       desktop-1:mx-auto
   }
 }
@@ -198,6 +198,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 @keyframes wobble {
