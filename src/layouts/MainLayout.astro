@@ -18,10 +18,9 @@ interface Props {
   title: string;
   description: string;
   opengraphImage: string;
-  keywords: string;
 }
 
-const { lang, title, description, opengraphImage, keywords } = Astro.props;
+const { lang, title, description, opengraphImage } = Astro.props;
 
 const currentDate = new Date();
 currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
@@ -34,7 +33,6 @@ currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset(
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href={`${Astro.site?.href}/favicon.png`} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords}>
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content="Mosketeros Group">
     <meta name="copyright" content={config.COPYRIGHT[lang]} />
