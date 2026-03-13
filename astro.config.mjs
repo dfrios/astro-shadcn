@@ -12,6 +12,8 @@ import showTailwindcssBreakpoint from "astro-show-tailwindcss-breakpoint";
 
 // https://astro.build/config
 export default defineConfig({
+  // security: { csp: true },
+
   integrations: [
     react({
       experimentalReactChildren: true,
@@ -38,38 +40,36 @@ export default defineConfig({
     locales: ["es", "en"],
   },
 
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.local(),
-        name: "roboto",
-        cssVariable: "--font-roboto",
-        options: {
-          variants: [
-            {
-              weight: "100 200 300 400 500 700 800 900",
-              style: "normal",
-              src: ["./src/assets/fonts/roboto-variable.ttf"],
-            },
-          ],
-        },
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "roboto",
+      cssVariable: "--font-roboto",
+      options: {
+        variants: [
+          {
+            weight: "100 200 300 400 500 700 800 900",
+            style: "normal",
+            src: ["./src/assets/fonts/roboto-variable.ttf"],
+          },
+        ],
       },
-      {
-        provider: fontProviders.local(),
-        name: "roboto-italic",
-        cssVariable: "--font-roboto-italic",
-        options: {
-          variants: [
-            {
-              weight: "100 200 300 400 500 700 800 900",
-              style: "normal",
-              src: ["./src/assets/fonts/roboto-variable-italic.ttf"],
-            },
-          ],
-        },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "roboto-italic",
+      cssVariable: "--font-roboto-italic",
+      options: {
+        variants: [
+          {
+            weight: "100 200 300 400 500 700 800 900",
+            style: "normal",
+            src: ["./src/assets/fonts/roboto-variable-italic.ttf"],
+          },
+        ],
       },
-    ],
-  },
+    },
+  ],
 
   site: "https://mysite.com",
 });

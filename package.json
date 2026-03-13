@@ -10,11 +10,11 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/react": "4.4.2",
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/react": "5.0.0",
+    "@astrojs/sitemap": "3.7.1",
     "@base-ui/react": "^1.2.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "5.18.0",
+    "astro": "6.0.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
@@ -24,7 +24,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.6",
+    "@astrojs/check": "0.9.7",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro-show-tailwindcss-breakpoint": "^1.0.10",
