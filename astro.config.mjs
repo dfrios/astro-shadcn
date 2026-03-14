@@ -12,7 +12,7 @@ import showTailwindcssBreakpoint from "astro-show-tailwindcss-breakpoint";
 
 // https://astro.build/config
 export default defineConfig({
-  // security: { csp: true },
+  security: { csp: true },
 
   integrations: [
     react({
