@@ -8,7 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lh-dev": "lighthouse http://localhost:4321 --view --output html --output-path ./tests/lighthouse-dev.html",
+    "lh-built": "lighthouse http://localhost:4322 --view --output html --output-path ./tests/lighthouse-built.html"
   },
   "dependencies": {
     "@astrojs/react": "5.0.0",
