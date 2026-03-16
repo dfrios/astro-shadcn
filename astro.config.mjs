@@ -12,7 +12,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  security: { csp: true },
+  // security: { csp: true },
 
   integrations: [
     react({
