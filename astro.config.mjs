@@ -8,7 +8,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 
 // https://jsr.io/@jonasgeiler/astro-show-tailwindcss-breakpoint
-import showTailwindCSSBreakpoint from "astro-show-tailwindcss-breakpoint";
+// import showTailwindCSSBreakpoint from "astro-show-tailwindcss-breakpoint";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,15 +19,15 @@ export default defineConfig({
       experimentalReactChildren: true,
     }),
     // relativeLinks(),
-    showTailwindCSSBreakpoint({
-      breakpoints: {
-        "m2": "389px",
-        "t": "809px",
-        "d1": "1365px",
-        "d2": "1535px",
-        "d3": "1919px",
-      },
-    }),
+    // showTailwindCSSBreakpoint({
+    //   breakpoints: {
+    //     "m2": "389px",
+    //     "t": "809px",
+    //     "d1": "1365px",
+    //     "d2": "1535px",
+    //     "d3": "1919px",
+    //   },
+    // }),
     sitemap({
       changefreq: "weekly",
       priority: 0.7,
