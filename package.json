@@ -31,7 +31,6 @@
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro-show-tailwindcss-breakpoint": "^1.0.10",
     "eslint": "^10.0.3",
     "eslint-plugin-astro": "^1.6.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
