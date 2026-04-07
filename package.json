@@ -13,11 +13,11 @@
     "lh-built": "lighthouse http://localhost:4322 --view --output html --output-path ./tests/lighthouse-built.html"
   },
   "dependencies": {
-    "@astrojs/react": "5.0.0",
-    "@astrojs/sitemap": "3.7.1",
+    "@astrojs/react": "5.0.3",
+    "@astrojs/sitemap": "3.7.2",
     "@base-ui/react": "^1.2.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "6.0.4",
+    "astro": "6.1.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
@@ -27,7 +27,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.7",
+    "@astrojs/check": "0.9.8",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
