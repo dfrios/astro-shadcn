@@ -6,6 +6,7 @@ import { Font } from "astro:assets";
 import "@/styles/global.css";
 
 import labelGeneral from "@lang/general.json";
+import availableLangs from "@data/langs.json";
 
 import MetaPixelHead from "@components/base/MetaPixelHead.astro";
 import MetaPixelBody from "@components/base/MetaPixelBody.astro";
@@ -18,9 +19,16 @@ interface Props {
   title: string;
   description: string;
   opengraphImage: string;
+  pathname: string;
 }
 
-const { lang, title, description, opengraphImage } = Astro.props;
+const {
+  lang,
+  title,
+  description,
+  opengraphImage,
+  pathname
+} = Astro.props;
 
 const currentDate = new Date();
 currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
@@ -40,6 +48,14 @@ currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset(
     <meta name="lastbuild" content={currentDate.toISOString().slice(0, 16)} />
     <link rel="canonical" href={Astro.url} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {
+      availableLangs.map(privateLange => {
+        const pathnameWithNoLanguage = pathname.replace(`/${lang}`, '');
+        return (
+          <link rel="alternate" hreflang={privateLange.shortname} href={`/${privateLange.shortname}/${pathnameWithNoLanguage}`} />
+        )
+      })
+    }
     <script src="../scripts/mode.ts"></script>
     <script src="../scripts/scripts.ts"></script>
     <slot name="head" />

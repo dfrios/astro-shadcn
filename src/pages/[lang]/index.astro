@@ -3,6 +3,9 @@ import type { GetStaticPaths } from "astro";
 import type { Lang, Langs, LangParams } from "@interfaces/lang";
 
 import langsJson from "@data/langs.json";
+import labelsIndex from "@lang/index.json";
+
+import MainLayout from "@layouts/MainLayout.astro";
 
 
 export const getStaticPaths = (() => {
@@ -24,4 +27,12 @@ const { lang } = Astro.params;
 const internalLang : Langs = lang as Langs;
 ---
 
-<h1>index {internalLang}</h1>
+<MainLayout
+  lang={internalLang}
+  title={labelsIndex.PAGE_TITLE[internalLang]}
+  description={labelsIndex.PAGE_DESCRIPTION[internalLang]}
+  opengraphImage="home.jpg"
+  pathname={Astro.url.pathname}
+>
+  <h1>index {internalLang}</h1>
+</MainLayout>
