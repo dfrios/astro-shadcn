@@ -14,6 +14,7 @@ const lang = "en";
   title={indexLabels.PAGE_TITLE[lang]}
   description={indexLabels.PAGE_DESCRIPTION[lang]}
   opengraphImage="home.jpg"
+  pathname={Astro.url.pathname}
 >
 
   <script type="application/ld+json" is:inline slot="head">
