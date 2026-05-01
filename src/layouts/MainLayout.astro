@@ -5,6 +5,7 @@ import { Font } from "astro:assets";
 
 import "@/styles/global.css";
 
+import packageJson from "../../package.json";
 import labelGeneral from "@lang/general.json";
 import availableLangs from "@data/langs.json";
 
@@ -32,6 +33,8 @@ const {
 
 const currentDate = new Date();
 currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
+
+const appVersion = packageJson.version
 ---
 
 <!doctype html>
@@ -46,6 +49,7 @@ currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset(
     <meta name="copyright" content={labelGeneral.COPYRIGHT[lang]} />
     <meta name="robots" content="index, follow">
     <meta name="lastbuild" content={currentDate.toISOString().slice(0, 16)} />
+    <meta name="version" content={appVersion}>
     <link rel="canonical" href={Astro.url} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {
