@@ -4,9 +4,11 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import astro from "eslint-plugin-astro";
 import prettier from "eslint-plugin-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import tsParser from "@typescript-eslint/parser";
 
 // parsers
-const tsParser = tseslint.parser;
+// const tsParser = tseslint.parser;
 const astroParser = astro.parser;
 
 export default defineConfig([
@@ -32,6 +34,7 @@ export default defineConfig([
     rules: {
       // disable warnings, since prettier should format on save
       "prettier/prettier": "off",
+      ...jsxA11y.configs.recommended.rules,
     },
   },
 
@@ -47,7 +50,7 @@ export default defineConfig([
         extraFileExtensions: [".astro"],
         sourceType: "module",
         ecmaVersion: "latest",
-        project: "./tsconfig.json",
+        // project: "./tsconfig.json",
       },
     },
     rules: {
@@ -58,6 +61,12 @@ export default defineConfig([
 
   // Ignore patterns
   {
-    ignores: ["dist/**", "**/*.d.ts", ".github/"],
+    ignores: [
+      "dist/**",
+      "**/*.d.ts",
+      ".github/",
+      ".agents/",
+      ".qwen/"
+    ],
   },
 ]);
