@@ -1,19 +1,46 @@
 ---
-import indexLabels from "@lang/index.json";
+import labelsIndex from "@lang/index.json";
+import labelsGeneral from "@lang/general.json";
+import packageJson from "../../package.json";
+import availableLangs from "@data/langs.json";
+
+
+const currentDate = new Date();
+currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
+
+const lang = 'es';
+const appVersion = packageJson.version
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="5; URL=/es/" />
-    <title>{indexLabels.PAGE_TITLE['es']}</title>
+    <link rel="icon" type="image/png" href={`${Astro.site?.href}favicon.png`} />
+    <meta name="description" content={labelsIndex.PAGE_DESCRIPTION[lang]} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Mosketeros Group">
+    <meta name="copyright" content={labelsGeneral.COPYRIGHT[lang]} />
+    <meta name="robots" content="index, follow">
+    <meta name="lastbuild" content={currentDate.toISOString().slice(0, 16)} />
+    <meta name="version" content={appVersion}>
+    <link rel="canonical" href={Astro.url} />
+    <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
+    {
+      availableLangs.map(privateLange => {
+        return (
+          <link rel="alternate" hreflang={privateLange.shortname} href={`/${privateLange.shortname}/`} />
+        )
+      })
+    }
+    <title>{labelsIndex.PAGE_TITLE[lang]}</title>
+
     <script>
       const locale = new Intl.Locale(navigator.language);
 
-      if (locale.language === "es") window.location.href = "/es";
-      else window.location.href = "/en";
+      // if (locale.language === "es") window.location.href = "/es";
+      // else window.location.href = "/en";
     </script>
   </head>
   <body> </body>
