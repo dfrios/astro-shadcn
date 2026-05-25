@@ -1,54 +1,24 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "verbatimModuleSyntax": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@data/*": [
-        "./src/data/*"
-      ],
-      "@lang/*": [
-        "./src/lang/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@layouts/*": [
-        "./src/layouts/*"
-      ],
-      "@widgets/*": [
-        "./src/widgets/*"
-      ],
-      "@interfaces/*": [
-        "./src/interfaces/*"
-      ],
-      "@utils/*": [
-        "./src/lib/utils/*"
-      ],
-      "@ui/*": [
-        "./src/components/ui/*"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ]
-    }
-  }
-
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"verbatimModuleSyntax": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@data/*": ["./src/data/*"],
+			"@lang/*": ["./src/lang/*"],
+			"@components/*": ["./src/components/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@widgets/*": ["./src/widgets/*"],
+			"@interfaces/*": ["./src/interfaces/*"],
+			"@utils/*": ["./src/lib/utils/*"],
+			"@ui/*": ["./src/components/ui/*"],
+			"@lib/*": ["./src/lib/*"],
+			"@hooks/*": ["./src/hooks/*"]
+		}
+	}
 }
