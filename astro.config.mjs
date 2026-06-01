@@ -46,6 +46,10 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ['astro/toolbar'],
+    },
+  },
   },
 
   build: {
