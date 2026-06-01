@@ -1,15 +1,14 @@
 ---
-import labelsIndex from "@lang/index.json";
-import labelsGeneral from "@lang/general.json";
-import packageJson from "../../package.json";
-import availableLangs from "@data/langs.json";
-
+import labelsIndex from '@lang/index.json';
+import labelsGeneral from '@lang/general.json';
+import packageJson from '../../package.json';
+import availableLangs from '@data/langs.json';
 
 const currentDate = new Date();
 currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
 
 const lang = 'es';
-const appVersion = packageJson.version
+const appVersion = packageJson.version;
 ---
 
 <!doctype html>
@@ -20,28 +19,39 @@ const appVersion = packageJson.version
     <link rel="icon" type="image/png" href={`${Astro.site?.href}favicon.png`} />
     <meta name="description" content={labelsIndex.PAGE_DESCRIPTION[lang]} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Mosketeros Group">
+    <meta name="author" content="Mosketeros Group" />
     <meta name="copyright" content={labelsGeneral.COPYRIGHT[lang]} />
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow" />
     <meta name="lastbuild" content={currentDate.toISOString().slice(0, 16)} />
-    <meta name="version" content={appVersion}>
+    <meta name="version" content={appVersion} />
     <link rel="canonical" href={Astro.url} />
     <link rel="sitemap" href=`${import.meta.env.BASE_URL}/sitemap-index.xml` />
     {
-      availableLangs.map(privateLange => {
+      availableLangs.map((privateLange) => {
         return (
-          <link rel="alternate" hreflang={privateLange.shortname} href={`/${privateLange.shortname}/`} />
-        )
+          <link
+            rel="alternate"
+            hreflang={privateLange.shortname}
+            href={`/${privateLange.shortname}/`}
+          />
+        );
       })
     }
     <title>{labelsIndex.PAGE_TITLE[lang]}</title>
 
     <script>
       const locale = new Intl.Locale(navigator.language);
+      const targetUrl = new URL(
+        locale.language === 'es'
+          ? `${window.location.origin}/es/`
+          : `${window.location.origin}/en/`,
+      );
 
-      // if (locale.language === "es") window.location.href = "/es";
-      // else window.location.href = "/en";
+      const currentUrl = new URL(window.location.href);
+      targetUrl.search = currentUrl.search;
+
+      window.location.href = targetUrl.toString();
     </script>
   </head>
-  <body> </body>
+  <body></body>
 </html>
