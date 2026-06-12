@@ -1,22 +1,22 @@
 // @ts-check
-import { defineConfig, fontProviders, svgoOptimizer } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import react from "@astrojs/react";
+import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
 // import relativeLinks from "astro-relative-links";
 
 // https://docs.astro.build/en/guides/integrations-guide/sitemap/
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://jsr.io/@jonasgeiler/astro-show-tailwindcss-breakpoint
 // import showTailwindCSSBreakpoint from "astro-show-tailwindcss-breakpoint";
 
 // https://astro.build/config
 export default defineConfig({
-    experimental: {
-      svgOptimizer: svgoOptimizer({
-        plugins: ["preset-default", { name: "removeViewBox" }]
-      })
-    },
+  experimental: {
+    svgOptimizer: svgoOptimizer({
+      plugins: ['preset-default', { name: 'removeViewBox' }],
+    }),
+  },
   // security: { csp: true },
 
   integrations: [
@@ -34,13 +34,13 @@ export default defineConfig({
     //   },
     // }),
     sitemap({
-      changefreq: "weekly",
+      changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => 
+      filter: (page) =>
         page !== 'https://DOMAIN/es/404/' &&
         page !== 'https://DOMAIN/en/404/' &&
-        page !== 'https://DOMAIN/test/'
+        page !== 'https://DOMAIN/test/',
     }),
   ],
 
@@ -50,47 +50,46 @@ export default defineConfig({
       include: ['astro/toolbar'],
     },
   },
-  },
 
   build: {
-    assets: "_assets",
+    assets: '_assets',
   },
 
   i18n: {
-    defaultLocale: "es",
-    locales: ["es", "en"],
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
   },
 
   fonts: [
     {
       provider: fontProviders.local(),
-      name: "roboto",
-      cssVariable: "--font-roboto",
+      name: 'roboto',
+      cssVariable: '--font-roboto',
       options: {
         variants: [
           {
-            weight: "100 200 300 400 500 700 800 900",
-            style: "normal",
-            src: ["./src/assets/fonts/roboto-variable.ttf"],
+            weight: '100 200 300 400 500 700 800 900',
+            style: 'normal',
+            src: ['./src/assets/fonts/roboto-variable.ttf'],
           },
         ],
       },
     },
     {
       provider: fontProviders.local(),
-      name: "roboto-italic",
-      cssVariable: "--font-roboto-italic",
+      name: 'roboto-italic',
+      cssVariable: '--font-roboto-italic',
       options: {
         variants: [
           {
-            weight: "100 200 300 400 500 700 800 900",
-            style: "normal",
-            src: ["./src/assets/fonts/roboto-variable-italic.ttf"],
+            weight: '100 200 300 400 500 700 800 900',
+            style: 'normal',
+            src: ['./src/assets/fonts/roboto-variable-italic.ttf'],
           },
         ],
       },
     },
   ],
 
-  site: "https://mysite.com",
+  site: 'https://mysite.com',
 });
