@@ -34,13 +34,22 @@ export default defineConfig([
     rules: {
       // disable warnings, since prettier should format on save
       "prettier/prettier": "off",
+    },
+  },
+
+  // jsx-a11y for non-Astro files only (crashes on Astro parser output)
+  {
+    files: ["**/*.{tsx,ts,jsx,js}"],
+    plugins: {
+      "jsx-a11y": jsxA11y,
+    },
+    rules: {
       ...jsxA11y.configs.recommended.rules,
     },
   },
 
-  // astro setup with a11y
+  // astro setup
   astro.configs.recommended,
-  astro.configs["jsx-a11y-recommended"],
   {
     files: ["**/*.astro"],
     languageOptions: {
@@ -50,12 +59,11 @@ export default defineConfig([
         extraFileExtensions: [".astro"],
         sourceType: "module",
         ecmaVersion: "latest",
-        // project: "./tsconfig.json",
       },
     },
     rules: {
-      "no-undef": "off", // Disable "not defined" errors for specific Astro types that are globally available (ImageMetadata)
-      "@typescript-eslint/no-explicit-any": "off", // you may want this as it can get annoying
+      "no-undef": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
 

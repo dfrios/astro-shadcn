@@ -1,12 +1,13 @@
 /** @type {import("prettier").Config} */
 export default {
 	printWidth: 100,
+  tabWidth: 2,
 	useTabs: false,
 	singleQuote: true,
-	tabWidth: 2,
+	trailingComma: "es5",
 	bracketSpacing: true,
+	arrowParens: "always",
 	htmlWhitespaceSensitivity: "ignore",
-	semi: true,
 	plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	overrides: [
 		{
@@ -17,4 +18,3 @@ export default {
 		},
 	],
 };
-
