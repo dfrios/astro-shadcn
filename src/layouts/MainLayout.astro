@@ -1,19 +1,19 @@
 ---
-import type { Langs } from "@interfaces/lang";
+import type { Langs } from '@interfaces/lang';
 
-import { Font } from "astro:assets";
+import { Font } from 'astro:assets';
 
-import "@/styles/global.css";
+import '@/styles/global.css';
 
-import packageJson from "../../package.json";
-import labelGeneral from "@lang/general.json";
-import availableLangs from "@data/langs.json";
+import packageJson from '../../package.json';
+import labelGeneral from '@lang/general.json';
+import availableLangs from '@data/langs.json';
 
-import MetaPixelHead from "@components/base/MetaPixelHead.astro";
-import MetaPixelBody from "@components/base/MetaPixelBody.astro";
-import GoogleTagManagerHead from "@components/base/GoogleTagManagerHead.astro";
-import GoogleTagManagerBody from "@components/base/GoogleTagManagerBody.astro";
-import OpenGraph from "@components/base/OpenGraph.astro";
+import MetaPixelHead from '@components/base/MetaPixelHead.astro';
+import MetaPixelBody from '@components/base/MetaPixelBody.astro';
+import GoogleTagManagerHead from '@components/base/GoogleTagManagerHead.astro';
+import GoogleTagManagerBody from '@components/base/GoogleTagManagerBody.astro';
+import OpenGraph from '@components/base/OpenGraph.astro';
 
 interface Props {
   lang: Langs;
@@ -23,18 +23,13 @@ interface Props {
   pathname: string;
 }
 
-const {
-  lang,
-  title,
-  description,
-  opengraphImage,
-  pathname
-} = Astro.props;
+const { lang, title, description, opengraphImage, pathname } = Astro.props;
 
 const currentDate = new Date();
 currentDate.setMinutes(currentDate.getMinutes() - currentDate.getTimezoneOffset());
 
-const appVersion = packageJson.version
+const appVersion = packageJson.version;
+const basePath = import.meta.env.BASE_URL ?? '';
 ---
 
 <!doctype html>
@@ -42,22 +37,26 @@ const appVersion = packageJson.version
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href={`${Astro.site?.href}/favicon.png`} />
+    <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content="Mosketeros Group">
+    <meta name="author" content="Mosketeros Group" />
     <meta name="copyright" content={labelGeneral.COPYRIGHT[lang]} />
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow" />
     <meta name="lastbuild" content={currentDate.toISOString().slice(0, 16)} />
-    <meta name="version" content={appVersion}>
+    <meta name="version" content={appVersion} />
     <link rel="canonical" href={Astro.url} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {
-      availableLangs.map(privateLange => {
+      availableLangs.map((privateLange) => {
         const pathnameWithNoLanguage = pathname.replace(`/${lang}`, '');
         return (
-          <link rel="alternate" hreflang={privateLange.shortname} href={`/${privateLange.shortname}/${pathnameWithNoLanguage}`} />
-        )
+          <link
+            rel="alternate"
+            hreflang={privateLange.shortname}
+            href={`/${privateLange.shortname}/${pathnameWithNoLanguage}`}
+          />
+        );
       })
     }
     <script src="../scripts/mode.ts"></script>
@@ -67,12 +66,19 @@ const appVersion = packageJson.version
 
     <GoogleTagManagerHead />
     <MetaPixelHead />
-    <OpenGraph lang={lang} title={title} description={description} opengraphImage={opengraphImage} />
+    <OpenGraph
+      lang={lang}
+      title={title}
+      description={description}
+      opengraphImage={opengraphImage}
+    />
 
     <Font cssVariable="--font-roboto" preload />
     <Font cssVariable="--font-roboto-italic" preload />
   </head>
-  <body class="font-roboto clamp-[py,5,10] clamp-[text,sm,base] text-balance bg-background text-foreground transition-colors duration-500">
+  <body
+    class="font-roboto clamp-[py,5,10] clamp-[text,sm,base] bg-background text-foreground text-balance transition-colors duration-500"
+  >
     <GoogleTagManagerBody />
     <MetaPixelBody />
 
