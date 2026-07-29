@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 // import relativeLinks from "astro-relative-links";
@@ -13,9 +13,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   experimental: {
-    svgOptimizer: svgoOptimizer({
-      plugins: ['preset-default', { name: 'removeViewBox' }],
-    }),
+    // svgOptimizer: svgoOptimizer({
+    //   plugins: ['preset-default', { name: 'removeViewBox' }],
+    // }),
   },
   // security: { csp: true },
 
