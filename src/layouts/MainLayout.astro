@@ -37,7 +37,7 @@ const basePath = import.meta.env.BASE_URL ?? '';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href={`${basePath}/favicon.png`} />
+    <link rel="icon" type="image/png" href={`${basePath.slice(1)}/favicon.png`} />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content="Mosketeros Group" />
