@@ -13,13 +13,13 @@
     "lh-built": "lighthouse http://localhost:4322 --view --output html --output-path ./tests/lighthouse-built.html"
   },
   "dependencies": {
-    "@astrojs/react": "6.0.2",
-    "@astrojs/sitemap": "3.7.3",
-    "@astrojs/ts-plugin": "^1.10.10",
+    "@astrojs/react": "6.0.5",
+    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/ts-plugin": "^1.10.11",
     "@base-ui/react": "^1.2.0",
     "@mosketerosgroup/mosketeros-ui": "^1.4.1",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "7.2.0",
+    "astro": "7.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
